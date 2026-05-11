@@ -1,0 +1,59 @@
+
+> src@0.0.1 build-storybook
+> storybook build --output-dir=C:\Users\inmac\AppData\Local\Temp\chromatic--38324-7ALlv7hCSa6w
+
+
+[90m┌[39m  Building storybook v10.3.6
+[90m│[39m
+[32m◇[39m  Cleaning outputDir:
+[90m│[39m  [36m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w[39m
+[90m│[39m
+[32m◇[39m  Loading presets
+[90m│[39m
+[32m◇[39m  Building manager..
+[90m│[39m
+[34m●[39m  Building preview..
+[2m11:29:31[22m [34m[vite][39m transforming...
+[2m11:29:33[22m [34m[vite][39m [32m✓[39m 179 modules transformed.
+[2m11:29:33[22m [34m[vite][39m rendering chunks...
+[2m11:29:34[22m [34m[vite][39m computing gzip size...
+[2m11:29:34[22m [34m[vite][39m transforming...
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[32m.vite/manifest.json                                                                                                                  [39m[1m[2m  8.30 kB[22m[1m[22m[2m │ gzip:   1.20 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[32miframe.html                                                                                                                          [39m[1m[2m 19.51 kB[22m[1m[22m[2m │ gzip:   5.51 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[35m_astro/iframe-BKEkYwBU.css                                                                                                           [39m[1m[2m 30.30 kB[22m[1m[22m[2m │ gzip:   6.65 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36m_astro/astro_3Ascripts_2Fpage-Higt3U9E.js                                                                                            [39m[1m[2m  0.04 kB[22m[1m[22m[2m │ gzip:   0.06 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36m_astro/astro_3Ascripts_2Fbefore-hydration-Higt3U9E.js                                                                                [39m[1m[2m  0.04 kB[22m[1m[22m[2m │ gzip:   0.06 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36m_astro/C_3A_2FUsers_2Finmac_2FDocuments_2Fstorybook_pruebas_2Fsrc_2Fsrc_2Fcomponents_2Fgreetings_2FGreeting-Dr1KRaEj.js              [39m[1m[2m  0.16 kB[22m[1m[22m[2m │ gzip:   0.16 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36m_astro/formatter-EIJCOSYU-D2Es4SSS.js                                                                                                [39m[1m[2m  0.31 kB[22m[1m[22m[2m │ gzip:   0.25 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36m_astro/jsx-runtime-u17CrQMm.js                                                                                                       [39m[1m[2m  0.48 kB[22m[1m[22m[2m │ gzip:   0.31 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36m_astro/Greeting.stories-BCVSIx0s.js                                                                                                  [39m[1m[2m  0.65 kB[22m[1m[22m[2m │ gzip:   0.36 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36m_astro/react-18-CdpftTip.js                                                                                                          [39m[1m[2m  0.77 kB[22m[1m[22m[2m │ gzip:   0.46 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36m_astro/Foundations.stories-KivzOC20.js                                                                                               [39m[1m[2m  0.84 kB[22m[1m[22m[2m │ gzip:   0.51 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36m_astro/preload-helper-PPVm8Dsz.js                                                                                                    [39m[1m[2m  1.23 kB[22m[1m[22m[2m │ gzip:   0.71 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36m_astro/_40astrojs_2Freact_2Fclient-CNTST9Hs.js                                                                                       [39m[1m[2m  1.90 kB[22m[1m[22m[2m │ gzip:   0.98 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36m_astro/Button.stories-CCtaDO9H.js                                                                                                    [39m[1m[2m  3.35 kB[22m[1m[22m[2m │ gzip:   1.36 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36m_astro/index-GO7GDrc_.js                                                                                                             [39m[1m[2m  8.14 kB[22m[1m[22m[2m │ gzip:   3.15 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36m_astro/C_3A_2FUsers_2Finmac_2FDocuments_2Fstorybook_pruebas_2Fsrc_2Fsrc_2Fcomponents_2Ffoundations_2FFoundationsGallery-DFvjOVYj.js  [39m[1m[2m  8.88 kB[22m[1m[22m[2m │ gzip:   2.53 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36mvite-inject-mocker-entry.js                                                                                                          [39m[1m[2m 28.15 kB[22m[1m[22m[2m │ gzip:   9.84 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36m_astro/Color-FRDS63T2-DydY1zao.js                                                                                                    [39m[1m[2m 30.06 kB[22m[1m[22m[2m │ gzip:  11.41 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36m_astro/WithTooltip-65CFNBJE-Gp8XSC35.js                                                                                              [39m[1m[2m 33.14 kB[22m[1m[22m[2m │ gzip:  11.68 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36m_astro/syntaxhighlighter-OH4MV7E3-Czh0PZkZ.js                                                                                        [39m[1m[2m 78.22 kB[22m[1m[22m[2m │ gzip:  27.43 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36m_astro/client-DL5r4Q2I.js                                                                                                            [39m[1m[2m184.05 kB[22m[1m[22m[2m │ gzip:  57.63 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36m_astro/iframe-Dp-aGcVq.js                                                                                                            [39m[1m[33m777.30 kB[39m[22m[2m │ gzip: 218.44 kB[22m
+[2m11:29:34[22m [34m[vite][39m [2m../../../AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w/[22m[36m_astro/DocsRenderer-LL677BLK-DIycNU9s.js                                                                                             [39m[1m[33m861.41 kB[39m[22m[2m │ gzip: 273.61 kB[22m
+[33m[1m11:29:34[22m [WARN] [vite][39m [33m
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+[2m11:29:34[22m [34m[vite][39m [32m✓[39m 214 modules transformed.
+[2m11:29:35[22m [34m[vite][39m rendering chunks...
+[2m11:29:35[22m [34m[vite][39m [2m../../../AppData/Local/Temp/storybook-server/[22m[36mindex.js  [39m[1m[33m1,653.71 kB[39m[22m[2m │ map: 2,809.43 kB[22m
+[2m11:29:35[22m [34m[vite][39m [32m✓ built in 1.12s[39m
+[2m11:29:35[22m [34m[vite][39m [32m✓ built in 3.82s[39m
+[90m│[39m
+[32m◇[39m  Output directory:
+[90m│[39m  C:/Users/inmac/AppData/Local/Temp/chromatic--38324-7ALlv7hCSa6w
+[90m│[39m
+[90m└[39m  Storybook build completed successfully
+

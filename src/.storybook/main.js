@@ -8,6 +8,12 @@ export default {
     name: '@storybook-astro/framework',
     options: {
       integrations: [react()],
+      /**
+       * Chromatic (y cualquier Storybook estático en la nube) no tiene el servidor
+       * de render Astro en localhost. `static` pre-renderiza historias .astro en el build.
+       * En `storybook dev` sigue usándose el middleware local.
+       */
+      renderMode: 'static',
     },
   },
   async viteFinal(config) {

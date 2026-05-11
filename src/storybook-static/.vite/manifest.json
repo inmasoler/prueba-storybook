@@ -1,6 +1,6 @@
 {
-  "_DocsRenderer-LL677BLK-BsVVo7QI.js": {
-    "file": "_astro/DocsRenderer-LL677BLK-BsVVo7QI.js",
+  "_DocsRenderer-LL677BLK-DDiOThyP.js": {
+    "file": "_astro/DocsRenderer-LL677BLK-DDiOThyP.js",
     "name": "DocsRenderer-LL677BLK",
     "isDynamicEntry": true,
     "imports": [
@@ -26,12 +26,8 @@
       "_index-GO7GDrc_.js"
     ]
   },
-  "_iframe-BUeEU6BJ.css": {
-    "file": "_astro/iframe-BUeEU6BJ.css",
-    "src": "_iframe-BUeEU6BJ.css"
-  },
-  "_iframe-BlHyiVkR.js": {
-    "file": "_astro/iframe-BlHyiVkR.js",
+  "_iframe-BMKrC5xt.js": {
+    "file": "_astro/iframe-BMKrC5xt.js",
     "name": "iframe",
     "imports": [
       "_preload-helper-PPVm8Dsz.js",
@@ -42,11 +38,15 @@
       "src/components/foundations/Foundations.stories.tsx",
       "src/components/greetings/Greeting.stories.tsx",
       "node_modules/@storybook/react-dom-shim/dist/react-18.js",
-      "_DocsRenderer-LL677BLK-BsVVo7QI.js"
+      "_DocsRenderer-LL677BLK-DDiOThyP.js"
     ],
     "css": [
       "_astro/iframe-BUeEU6BJ.css"
     ]
+  },
+  "_iframe-BUeEU6BJ.css": {
+    "file": "_astro/iframe-BUeEU6BJ.css",
+    "src": "_iframe-BUeEU6BJ.css"
   },
   "_index-GO7GDrc_.js": {
     "file": "_astro/index-GO7GDrc_.js",
@@ -61,13 +61,13 @@
     "name": "preload-helper"
   },
   "node_modules/@storybook/addon-docs/dist/_browser-chunks/Color-FRDS63T2.js": {
-    "file": "_astro/Color-FRDS63T2-D4bV0ZuY.js",
+    "file": "_astro/Color-FRDS63T2-5RZL0UOD.js",
     "name": "Color-FRDS63T2",
     "src": "node_modules/@storybook/addon-docs/dist/_browser-chunks/Color-FRDS63T2.js",
     "isDynamicEntry": true,
     "imports": [
-      "_DocsRenderer-LL677BLK-BsVVo7QI.js",
-      "_iframe-BlHyiVkR.js",
+      "_DocsRenderer-LL677BLK-DDiOThyP.js",
+      "_iframe-BMKrC5xt.js",
       "_index-GO7GDrc_.js",
       "_preload-helper-PPVm8Dsz.js",
       "node_modules/@storybook/react-dom-shim/dist/react-18.js",
@@ -86,12 +86,12 @@
     ]
   },
   "node_modules/storybook/dist/_browser-chunks/WithTooltip-65CFNBJE.js": {
-    "file": "_astro/WithTooltip-65CFNBJE-Dcw5g5V6.js",
+    "file": "_astro/WithTooltip-65CFNBJE-BEA_8VCE.js",
     "name": "WithTooltip-65CFNBJE",
     "src": "node_modules/storybook/dist/_browser-chunks/WithTooltip-65CFNBJE.js",
     "isDynamicEntry": true,
     "imports": [
-      "_DocsRenderer-LL677BLK-BsVVo7QI.js",
+      "_DocsRenderer-LL677BLK-DDiOThyP.js",
       "_index-GO7GDrc_.js",
       "_preload-helper-PPVm8Dsz.js",
       "node_modules/@storybook/react-dom-shim/dist/react-18.js",
@@ -100,12 +100,12 @@
     ]
   },
   "node_modules/storybook/dist/_browser-chunks/formatter-EIJCOSYU.js": {
-    "file": "_astro/formatter-EIJCOSYU-B077Pvon.js",
+    "file": "_astro/formatter-EIJCOSYU-CE7OgDAe.js",
     "name": "formatter-EIJCOSYU",
     "src": "node_modules/storybook/dist/_browser-chunks/formatter-EIJCOSYU.js",
     "isDynamicEntry": true,
     "imports": [
-      "_DocsRenderer-LL677BLK-BsVVo7QI.js",
+      "_DocsRenderer-LL677BLK-DDiOThyP.js",
       "_preload-helper-PPVm8Dsz.js",
       "_index-GO7GDrc_.js",
       "node_modules/@storybook/react-dom-shim/dist/react-18.js",
@@ -114,12 +114,12 @@
     ]
   },
   "node_modules/storybook/dist/_browser-chunks/syntaxhighlighter-OH4MV7E3.js": {
-    "file": "_astro/syntaxhighlighter-OH4MV7E3-D1K6wx9U.js",
+    "file": "_astro/syntaxhighlighter-OH4MV7E3-DxMKQ7g1.js",
     "name": "syntaxhighlighter-OH4MV7E3",
     "src": "node_modules/storybook/dist/_browser-chunks/syntaxhighlighter-OH4MV7E3.js",
     "isDynamicEntry": true,
     "imports": [
-      "_DocsRenderer-LL677BLK-BsVVo7QI.js",
+      "_DocsRenderer-LL677BLK-DDiOThyP.js",
       "_index-GO7GDrc_.js",
       "_preload-helper-PPVm8Dsz.js",
       "node_modules/@storybook/react-dom-shim/dist/react-18.js",
@@ -137,12 +137,12 @@
     ]
   },
   "src/components/actions/Button.stories.ts": {
-    "file": "_astro/Button.stories-uOfAuQu4.js",
+    "file": "_astro/Button.stories-Df4TFwG9.js",
     "name": "Button.stories",
     "src": "src/components/actions/Button.stories.ts",
     "isDynamicEntry": true,
     "imports": [
-      "_iframe-BlHyiVkR.js",
+      "_iframe-BMKrC5xt.js",
       "_preload-helper-PPVm8Dsz.js",
       "_index-GO7GDrc_.js"
     ]
@@ -154,7 +154,7 @@
     "isDynamicEntry": true,
     "imports": [
       "_jsx-runtime-u17CrQMm.js",
-      "virtual:astro-component-module/C%3A%2FUsers%2Finmac%2FDocuments%2Fstorybook_pruebas%2Fsrc%2Fsrc%2Fcomponents%2Ffoundations%2FFoundationsGallery.tsx",
+      "virtual:astro-component-module/C%3A%2FUsers%2Finmac%2FDocuments%2Fstorybook_pruebas%2Fsrc%2Fsrc%2Fcomponents%2Ffoundations%2FFoundationsGallery.tsx?component-wrapper",
       "_index-GO7GDrc_.js"
     ]
   },
@@ -164,24 +164,24 @@
     "src": "src/components/greetings/Greeting.stories.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "virtual:astro-component-module/C%3A%2FUsers%2Finmac%2FDocuments%2Fstorybook_pruebas%2Fsrc%2Fsrc%2Fcomponents%2Fgreetings%2FGreeting.tsx",
+      "virtual:astro-component-module/C%3A%2FUsers%2Finmac%2FDocuments%2Fstorybook_pruebas%2Fsrc%2Fsrc%2Fcomponents%2Fgreetings%2FGreeting.tsx?component-wrapper",
       "_jsx-runtime-u17CrQMm.js"
     ]
   },
-  "virtual:astro-component-module/C%3A%2FUsers%2Finmac%2FDocuments%2Fstorybook_pruebas%2Fsrc%2Fsrc%2Fcomponents%2Ffoundations%2FFoundationsGallery.tsx": {
+  "virtual:astro-component-module/C%3A%2FUsers%2Finmac%2FDocuments%2Fstorybook_pruebas%2Fsrc%2Fsrc%2Fcomponents%2Ffoundations%2FFoundationsGallery.tsx?component-wrapper": {
     "file": "_astro/C_3A_2FUsers_2Finmac_2FDocuments_2Fstorybook_pruebas_2Fsrc_2Fsrc_2Fcomponents_2Ffoundations_2FFoundationsGallery-DFvjOVYj.js",
     "name": "C_3A_2FUsers_2Finmac_2FDocuments_2Fstorybook_pruebas_2Fsrc_2Fsrc_2Fcomponents_2Ffoundations_2FFoundationsGallery",
-    "src": "virtual:astro-component-module/C%3A%2FUsers%2Finmac%2FDocuments%2Fstorybook_pruebas%2Fsrc%2Fsrc%2Fcomponents%2Ffoundations%2FFoundationsGallery.tsx",
+    "src": "virtual:astro-component-module/C%3A%2FUsers%2Finmac%2FDocuments%2Fstorybook_pruebas%2Fsrc%2Fsrc%2Fcomponents%2Ffoundations%2FFoundationsGallery.tsx?component-wrapper",
     "isEntry": true,
     "imports": [
       "_jsx-runtime-u17CrQMm.js",
       "_index-GO7GDrc_.js"
     ]
   },
-  "virtual:astro-component-module/C%3A%2FUsers%2Finmac%2FDocuments%2Fstorybook_pruebas%2Fsrc%2Fsrc%2Fcomponents%2Fgreetings%2FGreeting.tsx": {
+  "virtual:astro-component-module/C%3A%2FUsers%2Finmac%2FDocuments%2Fstorybook_pruebas%2Fsrc%2Fsrc%2Fcomponents%2Fgreetings%2FGreeting.tsx?component-wrapper": {
     "file": "_astro/C_3A_2FUsers_2Finmac_2FDocuments_2Fstorybook_pruebas_2Fsrc_2Fsrc_2Fcomponents_2Fgreetings_2FGreeting-Dr1KRaEj.js",
     "name": "C_3A_2FUsers_2Finmac_2FDocuments_2Fstorybook_pruebas_2Fsrc_2Fsrc_2Fcomponents_2Fgreetings_2FGreeting",
-    "src": "virtual:astro-component-module/C%3A%2FUsers%2Finmac%2FDocuments%2Fstorybook_pruebas%2Fsrc%2Fsrc%2Fcomponents%2Fgreetings%2FGreeting.tsx",
+    "src": "virtual:astro-component-module/C%3A%2FUsers%2Finmac%2FDocuments%2Fstorybook_pruebas%2Fsrc%2Fsrc%2Fcomponents%2Fgreetings%2FGreeting.tsx?component-wrapper",
     "isEntry": true,
     "imports": [
       "_jsx-runtime-u17CrQMm.js"
