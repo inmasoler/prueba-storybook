@@ -1,0 +1,50 @@
+---
+// components/Button.astro
+
+interface Props {
+  variant?: 'primary' | 'outline' | 'dark';
+  fullWidth?: boolean;
+  type?: 'button' | 'submit';
+  href?: string;
+  class?: string;
+}
+
+const {
+  variant = 'primary',
+  fullWidth = false,
+  type = 'button',
+  href,
+  class: extraClass = '',
+} = Astro.props;
+
+const base = [
+  'inline-flex items-center justify-center',
+  'font-body text-sm font-bold',
+  'rounded-lg cursor-pointer transition-colors',
+  'uppercase tracking-widest',
+  'px-7 py-3.5',
+].join(' ');
+
+const variants = {
+  primary: 'bg-action hover:bg-action-hover text-action-text border-none',
+  outline:
+    'bg-transparent hover:bg-white/10 text-text-inverse border border-text-inverse/25',
+  dark: 'bg-surface-deep hover:bg-surface-emphasis text-text-inverse border-none',
+};
+
+const classes = [base, variants[variant], fullWidth ? 'w-full' : '', extraClass]
+  .filter(Boolean)
+  .join(' ');
+---
+
+{
+  href ? (
+    <a href={href} class={classes}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class={classes}>
+      <slot />
+    </button>
+  )
+}

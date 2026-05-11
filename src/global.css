@@ -1,0 +1,652 @@
+@import 'tailwindcss';
+@import './exceptions/index.css';
+
+/* Ensure Tailwind scans app + Storybook files (needed for class strings in .astro, etc.). */
+@source "./src/**/*.{astro,html,js,mjs,cjs,ts,tsx,jsx,vue,svelte,md,mdx}";
+@source "./.storybook/**/*.{js,mjs,cjs,ts}";
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+/* ============================================================
+   Watan Group — Design Tokens
+   
+   ARQUITECTURA DE DOS CAPAS:
+   1. Primitivos  → describen QUÉ color es (paleta cruda)
+   2. Semánticos  → describen PARA QUÉ sirve (roles e intención)
+   
+   Regla: los componentes usan SIEMPRE semánticos, nunca primitivos.
+   ============================================================ */
+
+@theme {
+  /* ── CAPA 1: Primitivos ────────────────────────────────────
+     Nombrado: category + scale
+     No usar directamente en componentes.
+  ─────────────────────────────────────────────────────────── */
+
+  /* Navy */
+  --color-navy-0: #eef0f7;
+  --color-navy-200: #95a0ca;
+  --color-navy-400: #161f40;
+  --color-navy-600: #090e1e;
+  --color-navy-700: #04060f;
+
+  /* Green */
+  --color-green-0: #fafcef;
+  --color-green-200: #e7f2bd;
+  --color-green-400: #c8e087;
+  --color-green-500: #a8c065;
+  --color-green-600: #869a4b;
+  --color-green-800: #535c2f;
+
+  /* Neutral */
+  --color-neutral-0: #f9f8f5;
+  --color-neutral-100: #e8e7e0;
+  --color-neutral-500: #5c5c56;
+  --color-neutral-700: #1a1a18;
+  --color-neutral-900: #0d1020;
+
+  /* ── CAPA 2: Semánticos ────────────────────────────────────
+     Nombrado: concept → property → variant (Nathan Curtis)
+     Estos son los únicos tokens que usan componentes y páginas.
+  ─────────────────────────────────────────────────────────── */
+
+  /* Superficies — el fondo de cada región
+  
+     Patrón de alternancia en páginas:
+     body              → surface          (#fff, base del documento)
+     sección clara A   → surface          (#fff)
+     sección clara B   → surface-subtle   (crema, alternancia)
+     card sobre crema  → surface-raised   (#fff, siempre blanco)
+     sección oscura    → surface-emphasis (navy)
+     dropdown/overlay  → surface-deep     (navy oscuro)
+     footer            → surface-footer   (casi negro)
+  */
+  --color-surface: #ffffff;
+  /* base y secciones blancas */
+  --color-surface-subtle: var(--color-neutral-0);
+  /* secciones crema (alternancia) */
+  --color-surface-raised: #ffffff;
+  /* cards, siempre blancas */
+  --color-surface-emphasis: var(--color-navy-400);
+  /* secciones oscuras, nav */
+  --color-surface-deep: var(--color-navy-600);
+  /* dropdown, overlays */
+  --color-surface-footer: var(--color-neutral-900);
+  /* footer */
+
+  /* Texto — jerarquía de lectura */
+  --color-text: var(--color-neutral-700);
+  /* cuerpo principal */
+  --color-text-muted: var(--color-neutral-500);
+  /* secundario, subtítulos */
+  --color-text-inverse: #ffffff;
+  /* sobre fondos oscuros */
+  --color-text-inverse-muted: rgba(255, 255, 255, 0.55);
+  /* sobre oscuro, atenuado */
+  --color-text-accent: var(--color-green-400);
+  /* destacado, eyebrow */
+  --color-text-accent-dark: var(--color-green-600);
+  /* etiquetas sobre claro */
+
+  /* Acción — interactivos (botones, links activos, CTA) */
+  --color-action: var(--color-green-400);
+  --color-action-hover: var(--color-green-200);
+  --color-action-text-hover: var(--color-green-600);
+  --color-action-text: var(--color-navy-400);
+  /* texto sobre botón de acción */
+
+  /* Bordes */
+  --color-border: var(--color-neutral-100);
+  --color-border-inverse: rgba(255, 255, 255, 0.12);
+  /* sobre fondos oscuros */
+
+  /* Feedback — estados del sistema */
+  --color-feedback-positive: rgba(59, 109, 17, 1);
+  --color-feedback-negative: rgba(163, 45, 45, 1);
+
+  /* Tags / Badges */
+  --color-tag-info-bg: rgba(230, 241, 251, 1);
+  --color-tag-info-text: rgba(24, 95, 165, 1);
+  --color-tag-success-bg: rgba(234, 243, 222, 1);
+
+  /* ── Tipografía ──────────────────────────────────────────── */
+  --font-heading: 'Scheherazade New', serif;
+  --font-body: 'Almarai', sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ── Espaciado semántico ─────────────────────────────────── */
+  --space-section: 5rem;
+  /* padding vertical de secciones  → py-(--space-section) */
+  --space-page: 3rem;
+  /* padding horizontal base        → px-(--space-page)    */
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-regular);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+/* Skip link — visible on keyboard focus only */
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  top: 0.75rem;
+  z-index: 200;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  background: var(--color-action);
+  color: var(--color-action-text);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+.skip-to-main:focus {
+  left: 0.75rem;
+  outline: 2px solid var(--color-action);
+  outline-offset: 3px;
+}
+
+/* Global focus visibility for interactive elements */
+:focus-visible {
+  outline: 2px solid var(--color-action);
+  outline-offset: 3px;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --space-page: 1.5rem;
+    --space-section: 4rem;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --space-page: 1rem;
+    --space-section: 3rem;
+  }
+}
+
+html.motion-safe [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, var(--reveal-distance, 14px), 0);
+  transition:
+    opacity 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+html.motion-safe [data-reveal].is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ============================================================
+   @layer components — clases de transición
+   
+   REGLA: cuando un bloque tenga su componente .astro construido,
+   eliminar la clase correspondiente de aquí.
+   
+   YA ELIMINADOS (tienen componente propio):
+   - .btn-primary / .btn-outline / .btn-submit → Button.astro
+   ============================================================ */
+
+@layer components {
+  /* ── Tipografía ──────────────────────────────────────────── */
+  /* TODO → integrar como props en componentes de texto */
+  .text-h1 {
+    font-family: var(--font-heading);
+    font-size: 54px;
+    font-weight: var(--font-weight-semibold);
+    line-height: 120%;
+    letter-spacing: -0.5px;
+  }
+
+  .text-h2 {
+    font-family: var(--font-heading);
+    font-size: 40.5px;
+    font-weight: var(--font-weight-semibold);
+    line-height: 130%;
+    letter-spacing: -0.5px;
+  }
+
+  .text-h3 {
+    font-family: var(--font-heading);
+    font-size: 27px;
+    font-weight: var(--font-weight-semibold);
+    line-height: 130%;
+    letter-spacing: -0.5px;
+  }
+
+  .text-body-l {
+    font-family: var(--font-body);
+    font-size: 20.25px;
+    line-height: 160%;
+    letter-spacing: -0.5px;
+  }
+
+  .text-body-m {
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 160%;
+  }
+
+  .text-body-s {
+    font-family: var(--font-body);
+    font-size: 15.75px;
+    line-height: 145%;
+  }
+
+  .text-label {
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    line-height: 120%;
+  }
+
+  .text-cta {
+    font-family: var(--font-body);
+    font-size: 15.75px;
+    font-weight: var(--font-weight-bold);
+    line-height: 100%;
+    text-transform: uppercase;
+  }
+
+  /* ── Secciones ───────────────────────────────────────────── */
+  /* TODO → integrar como estructura en cada página .astro */
+  .section-label {
+    @apply text-xs font-bold uppercase tracking-widest mb-2.5;
+    color: var(--color-text-accent-dark);
+  }
+
+  .section-title {
+    font-family: var(--font-heading);
+    @apply text-[38.25px] font-semibold tracking-tight leading-tight mb-2.5;
+    color: var(--color-text);
+  }
+
+  .section-sub {
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 160%;
+    @apply max-w-[580px] mb-10;
+    color: var(--color-text-muted);
+  }
+
+  .eyebrow {
+    @apply text-[12.375px] font-bold uppercase tracking-[0.12em] mb-4;
+    color: var(--color-text-accent);
+  }
+
+  .pill {
+    @apply text-xs rounded-full px-3 py-1;
+    color: var(--color-green-800);
+    background-color: var(--color-green-200);
+    border: 1px solid var(--color-green-600);
+  }
+
+  /* ── Formularios ─────────────────────────────────────────── */
+  /* TODO → FormInput.astro */
+  .form-input,
+  .form-select {
+    @apply font-body text-sm w-full px-3.5 py-[11px] rounded-md outline-none;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--color-border-inverse);
+    color: var(--color-text-inverse);
+  }
+
+  .form-select {
+    color: var(--color-text-inverse-muted);
+  }
+
+  .form-select option {
+    color: var(--color-text);
+    background-color: #fff;
+  }
+
+  .form-select option:hover,
+  .form-select option:checked {
+    background-color: color-mix(in srgb, var(--color-green-200) 20%, #fff);
+  }
+
+  .form-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  /* ── Progress Stepper ───────────────────────────────────── */
+  .progress-stepper {
+    --ps-dot-size: 2.5rem;
+    --ps-track-offset: calc(var(--ps-dot-size) * 0.5);
+  }
+
+  .ps-track-wrap {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .ps-track,
+  .ps-progress {
+    position: absolute;
+    top: calc(var(--ps-dot-size) * 0.5);
+    left: var(--ps-track-offset);
+    width: calc(100% - var(--ps-dot-size));
+    height: 2px;
+    border-radius: 999px;
+    z-index: 0;
+  }
+
+  .ps-track {
+    background: var(--color-border);
+  }
+
+  .ps-progress {
+    background: var(--color-action);
+    width: 0;
+    transition: width 380ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .ps-headers {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .ps-step-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625rem;
+    border: 0;
+    background: transparent;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    text-align: center;
+    transition: color 200ms ease;
+  }
+
+  .ps-step-btn:focus-visible,
+  .ps-pip:focus-visible,
+  .ps-nav:focus-visible {
+    outline: 2px solid var(--color-action);
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+
+  .ps-dot {
+    width: var(--ps-dot-size);
+    height: var(--ps-dot-size);
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-muted);
+    background: var(--color-neutral-100);
+    border: 2px solid transparent;
+    transition: all 240ms ease;
+  }
+
+  .ps-step-btn.is-active,
+  .ps-step-btn[aria-selected='true'] {
+    color: var(--color-text);
+  }
+
+  .ps-step-btn.is-active .ps-dot,
+  .ps-step-btn[aria-selected='true'] .ps-dot {
+    color: var(--color-text-inverse);
+    background: var(--color-surface-deep);
+    border-color: color-mix(in srgb, var(--color-action) 40%, transparent);
+    box-shadow: 0 0 0 5px
+      color-mix(in srgb, var(--color-action) 36%, transparent);
+  }
+
+  .ps-step-label {
+    font-size: 0.625rem;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.35;
+    max-width: 12ch;
+  }
+
+  .ps-panel-wrap {
+    border-radius: 12px;
+    background: var(--color-surface-subtle);
+    padding: 2rem 2.25rem;
+    min-height: 11rem;
+  }
+
+  .ps-panel-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .ps-big-num {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 1;
+    color: color-mix(in srgb, var(--color-action) 24%, transparent);
+    margin-top: -0.25rem;
+  }
+
+  .ps-kicker {
+    font-size: 0.6875rem;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-accent-dark);
+    margin-bottom: 0.625rem;
+  }
+
+  .ps-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.35rem, 2.1vw, 1.7rem);
+    line-height: 1.2;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+  }
+
+  .ps-desc {
+    max-width: 58ch;
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .ps-controls {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .ps-nav {
+    border: 1px solid var(--color-border);
+    background: var(--color-surface-raised);
+    color: var(--color-text-muted);
+    border-radius: 4px;
+    padding: 0.625rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: all 180ms ease;
+  }
+
+  .ps-nav:hover:not(:disabled) {
+    border-color: color-mix(
+      in srgb,
+      var(--color-action) 55%,
+      var(--color-border)
+    );
+    color: var(--color-text);
+  }
+
+  .ps-nav-next {
+    background: var(--color-surface-deep);
+    border-color: var(--color-surface-deep);
+    color: var(--color-action);
+  }
+
+  .ps-nav-next:hover:not(:disabled) {
+    background: color-mix(in srgb, var(--color-surface-deep) 86%, black);
+    border-color: color-mix(in srgb, var(--color-surface-deep) 86%, black);
+    color: var(--color-action-hover);
+  }
+
+  .ps-nav:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  .ps-pips {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  .ps-pip {
+    width: 1.5rem;
+    height: 0.2rem;
+    border-radius: 999px;
+    border: 0;
+    background: var(--color-border);
+    cursor: pointer;
+    transition: background-color 180ms ease;
+  }
+
+  .ps-pip.is-active,
+  .ps-pip[aria-selected='true'] {
+    background: var(--color-action);
+  }
+
+  @media (max-width: 900px) {
+    .ps-step-label {
+      font-size: 0.58rem;
+      max-width: 10ch;
+    }
+
+    .ps-panel-wrap {
+      padding: 1.5rem;
+      min-height: 10rem;
+    }
+
+    .ps-panel-grid {
+      gap: 1rem;
+    }
+
+    .ps-big-num {
+      font-size: clamp(2.2rem, 11vw, 3.8rem);
+    }
+  }
+
+  @media (max-width: 680px) {
+    .progress-stepper {
+      --ps-dot-size: 2.2rem;
+    }
+
+    .ps-track-wrap {
+      margin-bottom: 1.5rem;
+    }
+
+    .ps-headers {
+      gap: 0.25rem;
+    }
+
+    .ps-step-label {
+      max-width: 9ch;
+      letter-spacing: 0.08em;
+    }
+
+    .ps-panel-grid {
+      grid-template-columns: 1fr;
+      gap: 0.65rem;
+    }
+
+    .ps-big-num {
+      margin-top: 0;
+    }
+
+    .ps-controls {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.65rem 0.9rem;
+    }
+
+    .ps-nav {
+      min-width: 7.5rem;
+      justify-content: center;
+      padding-inline: 0.75rem;
+    }
+  }
+
+  :root:lang(ar) .ps-step-label,
+  :root:lang(ar) .ps-kicker {
+    letter-spacing: 0.04em;
+  }
+
+  :root:lang(ar) .ps-panel-grid {
+    direction: rtl;
+  }
+
+  :root:lang(ar) .ps-title,
+  :root:lang(ar) .ps-desc {
+    text-align: right;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ps-progress,
+    .ps-step-btn,
+    .ps-dot,
+    .ps-nav,
+    .ps-pip {
+      transition: none !important;
+    }
+  }
+
+  /* ── Layout ──────────────────────────────────────────────── */
+  .inner {
+    @apply max-w-[1100px] mx-auto;
+  }
+
+  .inner-sm {
+    @apply max-w-[720px] mx-auto;
+  }
+}
+
+/* ============================================================
+   RTL — ajustes para árabe
+   ============================================================ */
+
+:root:lang(ar) {
+  font-size: 1.05rem;
+  /* caracteres árabes se leen más pequeños */
+  line-height: 1.8;
+  /* el árabe necesita más interlineado */
+}
