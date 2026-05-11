@@ -1,4 +1,0 @@
-import{j as o}from"./jsx-runtime-u17CrQMm.js";import r from"./C_3A_2FUsers_2Finmac_2FDocuments_2Fstorybook_pruebas_2Fsrc_2Fsrc_2Fcomponents_2Ffoundations_2FFoundationsGallery-DFvjOVYj.js";import"./index-GO7GDrc_.js";const n={title:"Foundations/Overview",parameters:{layout:"fullscreen",renderer:"react",docs:{description:{component:"Catálogo de tokens (colores, tipografía, espaciado) y muestras de utilidades Tailwind. Los colores muestran el valor RGB resuelto en el iframe de Storybook."}}}},e={name:"Tokens y utilidades",render:()=>o.jsx(r,{})};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
-  name: 'Tokens y utilidades',
-  render: () => <FoundationsGallery />
-}`,...e.parameters?.docs?.source}}};const d=["TodosLosTokens"];export{e as TodosLosTokens,d as __namedExportsOrder,n as default};
